@@ -31,3 +31,4 @@ hs_err_pid*
 /.idea/vcs.xml
 /.idea/workspace.xml
 /.idea/
+/node_modules/
