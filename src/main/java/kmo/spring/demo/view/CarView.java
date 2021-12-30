@@ -9,6 +9,8 @@ import com.vaadin.flow.router.Route;
 import kmo.spring.demo.data.entity.Car;
 import kmo.spring.demo.data.repository.CarRepository;
 
+import java.util.UUID;
+
 
 @Route("carview")
 public class CarView extends FormLayout {
@@ -33,7 +35,7 @@ public class CarView extends FormLayout {
         cars.setItems(carRepository.findAll());
         this.add(cars);
 
-        submit.addClickListener(e -> carRepository.save(new Car(vin.getValue(), color.getValue(), owner.getValue())));
+        submit.addClickListener(e -> carRepository.save(new Car(vin.getValue(), color.getValue(), owner.getValue(), UUID.randomUUID() + "@car.provider")));
         submit.addClickListener(e -> {
             vin.clear();
             color.clear();

@@ -21,13 +21,16 @@ public class Car {
     @NotBlank
     private String owner;
 
+    private String email;
+
     protected Car() {
     }
 
-    public Car(String vin, String color, String owner) {
+    public Car(final String vin, final String color, final String owner, final String email) {
         this.vin = vin;
         this.color = color;
         this.owner = owner;
+        this.email = email;
     }
 
 }
