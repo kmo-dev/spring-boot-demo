@@ -34,6 +34,7 @@ public class CarView extends FormLayout {
         final var cars = new Grid<>(Car.class, true);
         cars.setItems(carRepository.findAll());
         this.add(cars);
+        this.setColspan(cars, 2);
 
         submit.addClickListener(e -> carRepository.save(new Car(vin.getValue(), color.getValue(), owner.getValue(), UUID.randomUUID() + "@car.provider")));
         submit.addClickListener(e -> {
